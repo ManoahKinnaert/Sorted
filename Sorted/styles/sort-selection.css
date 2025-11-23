@@ -1,0 +1,29 @@
+.algo-selector-frame {
+    background-color: rgb(200, 200, 200);
+    padding: 10px;
+    border-radius: 20px;
+    margin: 15px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.selector-btn-frame {
+    display: inline;
+    justify-content: space-between;
+}
+
+.algo-btn {
+    color: black;
+    background-color: rgb(250, 250, 250);
+
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 20px 10px 20px;
+    border: none;
+    border-radius: 10px;
+}
+
+.algo-btn:hover {
+    background-color: mediumspringgreen;
+}

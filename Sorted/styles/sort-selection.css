@@ -26,4 +26,21 @@
 
 .algo-btn:hover {
     background-color: mediumspringgreen;
+    cursor: pointer;
+}
+
+.sort-btn {
+    color: white;
+    background-color: limegreen;
+
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 35px 10px 35px;
+    border: none;
+    border-radius: 10px;
+}
+
+.sort-btn:hover {
+    background-color: lime;
+    cursor: pointer;
 }

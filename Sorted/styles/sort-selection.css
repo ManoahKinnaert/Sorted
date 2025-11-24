@@ -29,6 +29,11 @@
     cursor: pointer;
 }
 
+.algo-btn:disabled {
+    color: rgb(0, 0, 0, 0.3);
+    background-color: rgb(250, 250, 250, 0.4);
+}
+
 .sort-btn {
     color: white;
     background-color: limegreen;
@@ -43,6 +48,11 @@
 .sort-btn:hover {
     background-color: lime;
     cursor: pointer;
+}
+
+.sort-btn:disabled {
+    color: rgb(255, 255, 255, 0.3);
+    background-color: rgb(0, 255, 0, 0.4);
 }
 
 .reset-btn {

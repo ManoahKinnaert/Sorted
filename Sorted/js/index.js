@@ -6,17 +6,15 @@ let merge_btn = document.getElementById("merge_btn")
 let reset_btn = document.getElementById("reset_btn")
 let sort_btn = document.getElementById("sort_btn")
 
-insertion_btn.onclick(() => {select_insertion_sort()})
-selection_btn.onclick(() => {select_selection_sort()})
-quick_btn.onclick(() => {select_quick_sort()})
-merge_btn.onclick(() => {select_merge_sort()})
-sort_btn.onclick(() => {do_sort()})
-
-window.onload(() => {
-    sort_btn.disabled = true 
-})
+insertion_btn.onclick = () => {select_insertion_sort()}
+selection_btn.onclick = () => {select_selection_sort()}
+quick_btn.onclick = () => {select_quick_sort()}
+merge_btn.onclick = () => {select_merge_sort()}
+sort_btn.onclick = () => {do_sort()}
 
 function select_insertion_sort() {
+    sort_btn.disabled = false
+    alert("test")
 }
 
 function select_selection_sort() {

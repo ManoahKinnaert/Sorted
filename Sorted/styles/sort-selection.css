@@ -44,3 +44,20 @@
     background-color: lime;
     cursor: pointer;
 }
+
+.reset-btn {
+    color: white;
+    background-color: orange;
+
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 35px 10px 35px;
+    border: none;
+    border-radius: 10px;
+}
+
+.reset-btn:hover {
+    color: black;
+    background-color: yellow;
+    cursor: pointer;
+}

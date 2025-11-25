@@ -6,6 +6,7 @@ class DataArray {
     constructor (size) {
         this.size = size
         this.values = []
+        this.animationSpeed = 1.0
 
     }
 
@@ -37,8 +38,10 @@ class DataArray {
 
     async setElement(element, index) {
         this.values[index] = element 
-        await sleep(200)
+        document.getElementById(`${index}`).style.backgroundColor = "mediumspringgreen"
+        await sleep(100 * this.animationSpeed)
         document.getElementById(`${index}`).style.height = `${this.values[index] * 10}px`
+        document.getElementById(`${index}`).style.backgroundColor = "rgb(0, 10, 40)"
     }
 
     getElement(index) {

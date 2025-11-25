@@ -1,3 +1,7 @@
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 class DataArray {
     constructor (size) {
         this.size = size
@@ -31,13 +35,13 @@ class DataArray {
         this.values.push(element)
     }
 
-    setElement(element, index) {
+    async setElement(element, index) {
         this.values[index] = element 
-        setTimeout(() => {document.getElementById(`${index}`).style.height = `${this.values[index] * 10}px`}, 100)
+        await sleep(200)
+        document.getElementById(`${index}`).style.height = `${this.values[index] * 10}px`
     }
 
     getElement(index) {
-        setTimeout(() => {}, 500) 
         return this.values[index]
     }
 }

@@ -1,0 +1,19 @@
+.algo-box {
+    margin: auto;
+    width: auto;
+}
+
+table {
+    margin: 50px 20px 50px 20px;
+}
+
+table div {
+    background-color: rgb(0, 10, 40);
+}
+
+table div:hover {
+    background-color: mediumspringgreen;
+}
+td {
+    vertical-align: bottom;
+}

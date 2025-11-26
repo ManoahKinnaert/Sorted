@@ -1,5 +1,5 @@
 import { DataArray } from './data.js'
-import {selectionSort} from './sorted.js'
+import {insertionSort, quickSort, selectionSort} from './sorted.js'
 
 let dataArray = new DataArray(null)
 let sortType = ""
@@ -10,6 +10,7 @@ let sorting_btns = {
     "quick_btn": document.getElementById("quick_btn"),
     "merge_btn": document.getElementById("merge_btn")
 }
+
 let sort_btn = document.getElementById("sort_btn")
 let reset_btn = document.getElementById("reset_btn")
 
@@ -56,6 +57,10 @@ function do_sort() {
     console.log(sortType)
     if (sortType === "selection_btn") {
         selectionSort(dataArray)
+    } else if (sortType === "insertion_btn") {
+        insertionSort(dataArray)
+    } else if (sortType === "quick_btn") {
+        quickSort(dataArray, 0, dataArray.values.length - 1)
     }
     
     reset_btn.disabled = false 

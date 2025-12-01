@@ -52,9 +52,9 @@ async function partition(values, start, to) {
     return j
 }
 
-function quickSort(values, start, to) {
+async function quickSort(values, start, to) {
     if (start >= to) {return}
-    let p = partition(values, start, to)
+    let p = await partition(values, start, to)
     quickSort(values, start, p)
     quickSort(values, p + 1, to)
 }

@@ -59,6 +59,4 @@ async function quickSort(values, start, to) {
     quickSort(values, p + 1, to)
 }
 
-export {selectionSort}
-export {insertionSort}
-export {quickSort}
+export {selectionSort, insertionSort, quickSort}

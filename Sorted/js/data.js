@@ -3,11 +3,12 @@ function sleep(ms) {
 }
 
 class DataArray {
-    constructor (size) {
+    constructor (size, parent=null, sliceOffset=0) {
         this.size = size
         this.values = []
         this.animationSpeed = 1.0
-
+        this.parent = parent
+        this.sliceOffset = sliceOffset
     }
 
     getHtml() {
@@ -38,10 +39,18 @@ class DataArray {
 
     async setElement(element, index) {
         this.values[index] = element 
-        document.getElementById(`${index}`).style.backgroundColor = "mediumspringgreen"
-        await sleep(100 * this.animationSpeed)
-        document.getElementById(`${index}`).style.height = `${this.values[index] * 10}px`
-        document.getElementById(`${index}`).style.backgroundColor = "rgb(0, 10, 40)"
+        if (this.parent === null) {
+            document.getElementById(`${index}`).style.backgroundColor = "mediumspringgreen"
+            await sleep(100 * this.animationSpeed)
+            document.getElementById(`${index}`).style.height = `${this.values[index] * 10}px`
+            document.getElementById(`${index}`).style.backgroundColor = "rgb(0, 10, 40)"
+        } else {
+            await this.parent.setElement(element, index + this.sliceOffset)
+        }
+        
+    }
+
+    getSlice(start, end) {
     }
 
     getElement(index) {

@@ -59,4 +59,44 @@ async function quickSort(values, start, to) {
     quickSort(values, p + 1, to)
 }
 
-export {selectionSort, insertionSort, quickSort}
+async function mergeLists(first, second, values) {
+    let i_first = 0
+    let i_second = 0
+    let j = 0
+
+    while (i_first < first.getLength() && i_second < second.getLength()) {
+        if (first.getElement(i_first) < second.getElement(i_second)) {
+            await values.setElement(first.getElement(i_first), j)
+            i_first ++
+        } else {
+            await values.setElement(second.getElement(i_second), j)
+            i_second ++
+        }
+        j ++
+    }
+
+    while (i_first < first.getLength()) {
+        await values.setElement(first.getEement(i_first), j)
+        i_first ++
+        j ++
+    }
+
+    while (i_second < second.getLength()) {
+        await values.setElement(second.getElement(i_second), j)
+        i_second ++ 
+        j ++
+    }
+}
+
+async function mergeSort(values) {
+    let length = values.getLength()
+    if (length <= 1) return 
+    let mid = Math.floor(length / 2)
+    let first = values.getSlice(0, mid - 1)
+    let second = values.getSlice(mid, length - 1)
+    await mergeSort(first)
+    await mergeSort(second)
+    await mergeLists(first, second, values)
+}
+
+export {selectionSort, insertionSort, quickSort, mergeSort}

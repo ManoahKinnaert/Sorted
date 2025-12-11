@@ -51,10 +51,15 @@ class DataArray {
     }
 
     getSlice(start, end) {
+        return new DataArray(end - start, this.parent, start)
     }
 
     getElement(index) {
         return this.values[index]
+    }
+
+    getLength() {
+        return this.values.length
     }
 }
 
